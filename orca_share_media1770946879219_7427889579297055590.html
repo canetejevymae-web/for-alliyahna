@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Surprise 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #800000, #4b0000);
+    color: #fff;
+}
+header {
+    text-align: center;
+    padding: 50px 20px;
+}
+header h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    margin: 0;
+}
+header h2 {
+    font-size: 26px;
+    margin-top: 10px;
+    color: #ffd1dc;
+}
+.options {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.option-card {
+    background: rgba(255,255,255,0.15);
+    padding: 25px 35px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    width: 180px;
+}
+.option-card:hover {
+    transform: scale(1.1);
+    background: rgba(255,255,255,0.3);
+}
+.option-card span {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+section {
+    display: none;
+    max-width: 750px;
+    margin-top: 30px;
+}
+#loveLetter {
+    background: #fff5f2;
+    color: #2b1b17;
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    font-size: 20px;
+    line-height: 1.9;
+}
+#loveLetter h3 {
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 32px;
+    margin-top: 0;
+    color: #800000;
+}
+.signature {
+    margin-top: 30px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    color: #800000;
+}
+#flowersContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    height: 350px;
+}
+.flower {
+    width: 70px;
+    opacity: 0;
+    transition: 1s;
+}
+#musicSection {
+    text-align: center;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Happy Valentine's Day 💖</h1>
+    <h2>To My Baby, Alliyahna Rubio</h2>
+</header>
+
+<div class="options">
+    <div class="option-card" onclick="showSection('loveLetter')"><span>💌</span>Letter for You</div>
+    <div class="option-card" onclick="showSection('flowersSection')"><span>🌷</span>Flower for You</div>
+    <div class="option-card" onclick="showSection('musicSection')"><span>🎵</span>Music</div>
+</div>
+
+<section id="loveLetter">
+    <h3>Happy Valentine’s Day Lablab 💖</h3>
+    <p>I want to take this moment to express how much I truly appreciate you. Even though we only meet online, you have a way of brightening my days whenever we do. The things you share—the topics you bring up, your thoughts, and the way you express yourself—always make me smile and feel happy. I consider myself lucky to know someone as amazing as you.</p>
+
+    <p>I want you to know that even if we’re apart, I really like you, and I hope you feel the same. It’s perfectly understandable if we are both busy at times; what matters is that we continue to support and respect each other, even from a distance. Please take care of yourself, because you are truly precious to me.</p>
+
+    <p>And of course… wag ka muna masyado mag-inom ha, para kompleto pa kidney mo pag magkita tayo haha 😆❤️. I look forward to the day we finally meet in person, laugh together, and make memories we’ll always remember. Even though we are just getting to know each other, you make me so happy, and I hope this Valentine’s Day brings a smile to your face, just as you always bring one to mine.</p>
+
+    <p>I am genuinely grateful to have you, <strong>Alliyahnah</strong>, and I hope we can continue to enjoy these moments together online for now, and hopefully in person soon.</p>
+
+    <div class="signature">Sincerely,<br>ur cutiee pototiee 💖</div>
+</section>
+
+<section id="flowersSection">
+    <div id="flowersContainer"></div>
+</section>
+
+<section id="musicSection">
+    <iframe width="320" height="80"
+    src="https://www.youtube.com/embed/sljfHu0wF-s?autoplay=1&loop=1&playlist=sljfHu0wF-s"
+    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</section>
+
+<script>
+function showSection(id){
+    ['loveLetter','flowersSection','musicSection'].forEach(s=>document.getElementById(s).style.display='none');
+    document.getElementById(id).style.display='block';
+    if(id==='flowersSection') initFlowers();
+}
+function initFlowers(){
+    const container=document.getElementById('flowersContainer');
+    container.innerHTML='';
+    for(let i=0;i<10;i++){
+        const flower=document.createElement('img');
+        flower.className='flower';
+        flower.src='images/tulip.png';
+        container.appendChild(flower);
+        setTimeout(()=>{ flower.style.opacity=1; }, i*200);
+    }
+}
+</script>
+
+</body>
+</html>
